@@ -109,6 +109,7 @@ func mapp() {
 	var map1 = map[string]string{"Brand": "Ford", "Product": "Car", "Year release": "1990"}
 	fmt.Println(map1)
 
+	fmt.Printf("\x1b[34m------Checking the key and value in the map--------\x1b[0m\n")
 	// how to check specific values of the map val stands for value and ok stands for the key
 	val1, ok1 := map1["Brand"]
 	val2, ok2 := map1["color"]
@@ -120,6 +121,15 @@ func mapp() {
 	fmt.Println(ok3)
 	// Checking for only its value
 	fmt.Println(val4)
+
+	// using map references
+	fmt.Printf("\x1b[34m------Example of using reference in map--------\x1b[0m\n")
+	fmt.Println("initial value :", map1)
+	map3 := map1
+	map3["Brand"] = "Honda"
+	map3["Product"] = "Motorcycle"
+	map3["Year release"] = "2005"
+	fmt.Println("after using reference :", map3)
 
 	fmt.Printf("\x1b[34m------Another Example of using map--------\x1b[0m\n")
 	// empty array then we add using map2["name variable"] = "name value" but i recommend using make(map[keyType]valueType) instead of map([keyType]valueType{value})
@@ -135,8 +145,22 @@ func mapp() {
 	fmt.Println(map2)
 	// this is how we update a value in the map just override it.
 	map2["Year release"] = "2024"
+	map2["Brand"] = "Ferrari"
 	fmt.Println(map2)
 
+	fmt.Printf("\x1b[34m------Using iterate in map--------\x1b[0m\n")
+	// Iterate over map k stands for key and v for value you can customize the it based on your preferences
+	for k, v := range map2 {
+		fmt.Printf("%v : %v ", k, v)
+	}
+	// using this as a space
+	fmt.Println()
+	// iretate in order
+	var b []string
+	b = append(b, "Year release", "Brand", "Product")
+	for _, element := range b { // loop with the defined order
+		fmt.Printf("%v : %v, ", element, map2[element])
+	}
 }
 
 func main() {
