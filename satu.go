@@ -93,6 +93,7 @@ func slice() {
 
 	fmt.Printf("\x1b[34m-------Copy-------\x1b[0m\n")
 	// Copy
+	fmt.Println(sliceppp)
 	neededWords := sliceppp[:len(sliceppp)-5]
 	wordstoCopy := make([]string, len(neededWords))
 	copy(wordstoCopy, neededWords)
